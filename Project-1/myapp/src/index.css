@@ -1,0 +1,122 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Greeting Component */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  gap: 20px; /* Space between cards */
+  width: 100%;
+}
+
+/* UserProfileCard Styles */
+.user-profile-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  margin: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.user-profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.card-content .bio {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.card-content .location {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card-content .follow-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-content .follow-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .user-profile-card {
+    width: 45%; /* Cards take up 45% of the width on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .user-profile-card {
+    width: 90%; /* Cards take up 90% of the width on small screens */
+  }
+
+  .card-content h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-profile-card {
+    width: 100%; /* Cards take up 100% of the width on extra-small screens */
+  }
+}
