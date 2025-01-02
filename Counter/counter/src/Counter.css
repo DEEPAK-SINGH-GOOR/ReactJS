@@ -1,7 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%; /* Full height for centering */
+  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,25 +12,25 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%; /* Responsive width */
-  max-width: 400px; /* Limit maximum width */
+  width: 90%; 
+  max-width: 400px;
   padding: 20px;
-  background-color: white; /* Product box background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: white; 
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 h1 {
-  font-size: 2rem; /* Slightly smaller font for a product box */
+  font-size: 2rem; 
   margin-bottom: 15px;
-  color: #333; /* Neutral dark text color */
+  color: #333;
 }
 
 .btn {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Space between buttons */
+  gap: 10px; 
 }
 
 button {
@@ -39,17 +39,17 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #4caf50; /* Green button */
+  background-color: #4caf50;
   color: white;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  transition: all 0.3s ease; 
 }
 
 button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
-  transform: translateY(-2px); /* Lift effect */
+  background-color: #45a049;
+  transform: translateY(-2px);
 }
 
 button:active {
-  background-color: #3e8e41; /* Even darker green on click */
-  transform: translateY(1px); /* Push-down effect */
+  background-color: #3e8e41;
+  transform: translateY(1px);
 }
