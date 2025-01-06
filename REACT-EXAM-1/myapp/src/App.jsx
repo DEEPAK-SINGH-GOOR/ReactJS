@@ -12,9 +12,7 @@ function App() {
       <ReverseTimer30 />
       <Form />
       <ReverseTimer1Hour />
-      <Product products={[]} />
-
-      
+      <Product/>      
     </div>
   );
 }

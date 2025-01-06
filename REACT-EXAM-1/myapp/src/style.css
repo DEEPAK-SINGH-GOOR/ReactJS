@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,12 +7,11 @@ body {
   color: #333;
 }
 
-h1 {
+h2 {
   text-align: center;
   margin-top: 20px;
 }
 
-/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -40,7 +39,6 @@ form button:hover {
   background-color: #0056b3;
 }
 
-/* Product styles */
 .product-container {
   display: flex;
   flex-wrap: wrap;

@@ -1,23 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ReverseTimer1Hour = () => {
-  const [time, setTime] = useState(3600); // 1 hour in seconds
+const Timer = () => {
+    const [hour, setHour] = useState(0);
+    const [minute, setMinute] = useState(59);
+    const [second, setSecond] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
-    }, 1000);
+    useEffect(() => {
+        const id = setInterval(() => {
+            if (hour === 0 && minute === 0 && second === 0) {
+                alert("Time Finished");
+                clearInterval(id); 
+            } else {
+                if (second > 0) {
+                    setSecond(second - 1);
+                } else if (minute > 0) {
+                    setMinute(minute - 1);
+                    setSecond(59);
+                } else if (hour > 0) {
+                    setHour(hour - 1);
+                    setMinute(59);
+                    setSecond(59);
+                }
+            }
+        }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(id); 
+    }, [hour, minute, second]);
 
-  const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
-
-  return <h1 className="timer">{formatTime(time)}</h1>;
+    return (
+        <div className="timer-container">
+            <h2 className="timer-display">
+            Time Left: {hour}:{minute}:{second}
+            </h2>
+        </div>
+    );
 };
 
-export default ReverseTimer1Hour;
+export default Timer;
