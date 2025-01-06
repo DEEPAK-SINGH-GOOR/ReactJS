@@ -14,7 +14,6 @@ const Counter = () => {
         else {
             setNum(num - 1)
         }
-
     }
     return (
         <div className='container'>
