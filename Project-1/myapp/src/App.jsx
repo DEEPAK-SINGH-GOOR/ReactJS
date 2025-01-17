@@ -1,7 +1,6 @@
 import React from "react";
 import Greeting from "./Greeting";  
 import UserProfileCard from "./UserProfileCard";  
-// import StyledComponent from "./StyledComponent";  
 
 const App = () => {
   const users = [

@@ -19,17 +19,23 @@ const data = () => {
     e.preventDefault();
     setProduct([...product, formdata]);
   }
+  const handleDelete = (index) => {
+    const updatedProducts = product.filter((A, i) => i !== index);
+    // const updatedProducts = [...product]
+    // updatedProducts.splice(index,1)
+    setProduct(updatedProducts);
+  };  
 
   return (
     <div>
       <form onSubmit={handelSubmit}>
-        <input name="name" value={formdata.name} placeholder='Name' onChange={handleinput} />
+        <input name="name"  placeholder='Name' onChange={handleinput} />
 
-        <input name="description" value={formdata.description} placeholder="Description" onChange={handleinput} />
+        <input name="description"  placeholder="Description" onChange={handleinput} />
 
-        <input name="price" value={formdata.price} type="number" placeholder="Price" onChange={handleinput} />
+        <input name="price" type="number" placeholder="Price" onChange={handleinput} />
 
-        <input name="image" value={formdata.image} placeholder="Image URL" onChange={handleinput} />
+        <input name="image" placeholder="Image URL" onChange={handleinput} />
 
         <button type="submit">Submit</button>
 
@@ -43,6 +49,7 @@ const data = () => {
             <h2>{product.name}</h2>
             <p>{product.description}</p>
             <p>${product.price}</p>
+            <button onClick={() => handleDelete(index)}>Delete</button>
           </div>
         ))}
       </div>

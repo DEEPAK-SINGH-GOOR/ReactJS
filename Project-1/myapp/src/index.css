@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,29 +10,25 @@ body {
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start; 
   min-height: 100vh;
   flex-direction: column;
   padding: 20px;
 }
-
-/* Greeting Component */
 h1 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Profile Container */
 .profile-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allow wrapping of cards */
-  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; 
+  gap: 20px; 
   width: 100%;
 }
 
-/* UserProfileCard Styles */
 .user-profile-card {
   background-color: #fff;
   border-radius: 10px;
@@ -98,7 +94,6 @@ h1 {
   background-color: #0056b3;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
   .user-profile-card {
     width: 45%; /* Cards take up 45% of the width on medium screens */
