@@ -1,23 +1,25 @@
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
+const mcqRouter = require("../backend/routes/questionRoutes");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/mcq", mcqRouter);
 
-let questions = [];
+const dbConnect = async () => {
+    try {
+        await mongoose.connect("mongodb://localhost:27017/mcqExamDB");
+        console.log("MongoDB connected for MCQ exam system");
+    } catch (err) {
+        console.log(err.message);
+    }
+};
 
-app.post("/api/question", (req, res) => {
-    const { questionNo, question, answer } = req.body;
-    questions.push({ questionNo, question, answer });
-    res.send("Question added successfully!");
-});
-
-app.get("/api/question", (req, res) => {
-    res.send(questions);
-});
+dbConnect();
 
 app.listen(8090, () => {
-    console.log("Server is running on 8090");
+    console.log("Server running on port 8090");
 });

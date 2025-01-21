@@ -1,103 +1,119 @@
-/* Center the entire content on the page */
-body {
+/* Flex container to arrange buttons in a row */
+div.options {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #f5f5f5; /* Light gray background */
-  font-family: Arial, sans-serif;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%; /* Full width container for options */
+  margin-top: 10px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-/* Single container for both form and list */
-.container {
-  padding: 20px;
-  background-color: #ffffff; /* White background */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  max-width: 400px; /* Limit container width */
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* Styling for the option buttons */
+button.option {
+  display: inline-block;
+  flex: 1; /* Allow buttons to grow and take equal space */
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  word-wrap: break-word; /* Ensure long text wraps inside button */
+  white-space: normal; /* Allow text to wrap to the next line */
 }
 
-/* Style for the form */
+button.option.correct {
+  background-color: #4CAF50; /* Green for correct answer */
+  color: white;
+}
+
+button.option.wrong {
+  background-color: #f44336; /* Red for wrong answer */
+  color: white;
+}
+
+/* Styling for the form */
 form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-/* Style for the input fields */
-input {
+form input {
+  margin: 10px 0;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 14px;
 }
 
-input {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 5px; /* Optional padding for better spacing */
-  font-size: 14px; /* Default readable size */
-}
-
-input:focus {
-  border-color: #0078d7;
-  outline: none;
-}
-
-/* Style for the submit button */
-button {
+form button {
   padding: 10px;
-  background-color: #0078d7; /* Blue button */
+  background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 3px;
-  font-size: 14px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #005fa3; /* Darker blue on hover */
+form button:hover {
+  background-color: #45a049;
 }
 
-/* Style for the question list */
+/* Styling for the header */
 h2 {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
   text-align: center;
+  color: #333;
+  margin-top: 40px;
 }
 
+/* Styling for the list of questions */
 ul {
   list-style-type: none;
-  padding: 0;
+  padding-left: 0;
+  margin-top: 20px;
 }
 
 li {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-color: #f9f9f9;
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-top: 50px;
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-strong {
-  font-weight: bold;
-  color: #333;
-}
-
-em {
-  font-style: italic;
-  color: #555;
-}
-
-/* Message style when no questions are available */
 p {
-  color: #888;
-  font-size: 14px;
   text-align: center;
+  color: #888;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Optional styling for the message when no MCQs are available */
+p.no-mcq {
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Styling for the container */
+div {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+form input, form button {
+  margin-top: 10px;
+}
+
+button.option {
+  margin-bottom: 10px;
 }
