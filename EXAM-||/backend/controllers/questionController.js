@@ -16,10 +16,9 @@ const addQuestion = async (req, res) => {
 const deleteQuestion = async (req, res) => {
     try {
         await Mcq.findByIdAndDelete(req.params.id);
-        res.send("MCQ deleted successfully");
+        res.send("Mcq deleted ");
     } catch (err) {
-        res.send("Error deleting the MCQ");
+        res.send("Error");
     }
 };
-
 module.exports = { getQuestion, addQuestion ,deleteQuestion };
