@@ -6,7 +6,6 @@ const App = () => {
     return (
         <div>
             <Timer />
-            <br /><br /><br /><br /><br /><br />
             <Form />
         </div>
     );

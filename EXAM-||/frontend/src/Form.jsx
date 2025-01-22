@@ -77,60 +77,60 @@ const McqForm = () => {
             <div>
                 <h2>MCQs</h2>
                 {mcqs.length ? (
-                    <ul>
-                        {mcqs.map((mcq, index) => (
-                            <li key={index}>
-                                {mcq.question} <br />
-                                <div className="options">
-                                    <button
-                                        className={`option ${selectedAnswers[index] === "a"
-                                                ? mcq.correctAnswer === "a"
-                                                    ? "correct"
-                                                    : "wrong"
-                                                : ""
-                                            }`}
-                                        onClick={() => handleAnswerSelect(index, "a")}
-                                    >
-                                        A: {mcq.optionA}
-                                    </button>
-                                    <button
-                                        className={`option ${selectedAnswers[index] === "b"
-                                                ? mcq.correctAnswer === "b"
-                                                    ? "correct"
-                                                    : "wrong"
-                                                : ""
-                                            }`}
-                                        onClick={() => handleAnswerSelect(index, "b")}
-                                    >
-                                        B: {mcq.optionB}
-                                    </button>
-                                    <button
-                                        className={`option ${selectedAnswers[index] === "c"
-                                                ? mcq.correctAnswer === "c"
-                                                    ? "correct"
-                                                    : "wrong"
-                                                : ""
-                                            }`}
-                                        onClick={() => handleAnswerSelect(index, "c")}
-                                    >
-                                        C: {mcq.optionC}
-                                    </button>
-                                    <button
-                                        className={`option ${selectedAnswers[index] === "d"
-                                                ? mcq.correctAnswer === "d"
-                                                    ? "correct"
-                                                    : "wrong"
-                                                : ""
-                                            }`}
-                                        onClick={() => handleAnswerSelect(index, "d")}
-                                    >
-                                        D: {mcq.optionD}
-                                    </button>
-                                </div>
-                                Correct Answer: {mcq.correctAnswer}
-                            </li>
-                        ))}
-                    </ul>
+                   <ul>
+                   {mcqs.map((mcq, index) => (
+                       <li key={index}>
+                           {mcq.question} <br />
+                           <div className="options">
+                               <button
+                                   className={`option ${selectedAnswers[index] === "a"
+                                           ? mcq.correctAnswer === "a"
+                                               ? "correct"
+                                               : "wrong"
+                                           : ""
+                                       }`}
+                                   onClick={() => handleAnswerSelect(index, "a")}
+                               >
+                                   A: {mcq.optionA}
+                               </button>
+                               <button
+                                   className={`option ${selectedAnswers[index] === "b"
+                                           ? mcq.correctAnswer === "b"
+                                               ? "correct"
+                                               : "wrong"
+                                           : ""
+                                       }`}
+                                   onClick={() => handleAnswerSelect(index, "b")}
+                               >
+                                   B: {mcq.optionB}
+                               </button>
+                               <button
+                                   className={`option ${selectedAnswers[index] === "c"
+                                           ? mcq.correctAnswer === "c"
+                                               ? "correct"
+                                               : "wrong"
+                                           : ""
+                                       }`}
+                                   onClick={() => handleAnswerSelect(index, "c")}
+                               >
+                                   C: {mcq.optionC}
+                               </button>
+                               <button
+                                   className={`option ${selectedAnswers[index] === "d"
+                                           ? mcq.correctAnswer === "d"
+                                               ? "correct"
+                                               : "wrong"
+                                           : ""
+                                       }`}
+                                   onClick={() => handleAnswerSelect(index, "d")}
+                               >
+                                   D: {mcq.optionD}
+                               </button>
+                           </div>
+                       </li>
+                   ))}
+               </ul>
+               
                 ) : (
                     <p>No MCQs available.</p>
                 )}

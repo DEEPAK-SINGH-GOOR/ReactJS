@@ -1,6 +1,6 @@
 const Mcq = require("../models/questionModel");
 
-const getMcqs = async (req, res) => {
+const getQuestion = async (req, res) => {
     try {
         const mcqs = await Mcq.find();
         res.json(mcqs);
@@ -9,7 +9,7 @@ const getMcqs = async (req, res) => {
     }
 };
 
-const addMcq = async (req, res) => {
+const addQuestion = async (req, res) => {
     try {
         const mcqData = req.body;
         const updatedMcq = await Mcq.findOneAndUpdate(
@@ -23,4 +23,13 @@ const addMcq = async (req, res) => {
     }
 };
 
-module.exports = { getMcqs, addMcq };
+const deleteQuestion = async (req, res) => {
+    try {
+        await Mcq.findByIdAndDelete(req.params.id);
+        res.send("MCQ deleted successfully");
+    } catch (err) {
+        res.send("Error deleting the MCQ");
+    }
+};
+
+module.exports = { getQuestion, addQuestion ,deleteQuestion };

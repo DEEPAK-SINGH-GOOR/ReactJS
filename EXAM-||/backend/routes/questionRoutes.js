@@ -1,9 +1,10 @@
 const { Router } = require("express");
-const { getMcqs, addMcq } = require("../controllers/questionController");
+const { getQuestion, addQuestion ,deleteQuestion} = require("../controllers/questionController");
 
 const mcqRouter = Router();
 
-mcqRouter.get("/", getMcqs);
-mcqRouter.post("/", addMcq);
+mcqRouter.get("/", getQuestion);
 
+mcqRouter.post("/", addQuestion);
+mcqRouter.delete("/:id", deleteQuestion);  
 module.exports = mcqRouter;

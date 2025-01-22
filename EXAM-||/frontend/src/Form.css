@@ -1,119 +1,159 @@
-/* Flex container to arrange buttons in a row */
+/* General styling for the page */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Soft background */
+  color: #333;
+}
+
+/* Container for options */
 div.options {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  width: 100%; /* Full width container for options */
-  margin-top: 10px;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  gap: 12px;
+  width: 100%;
+  margin-top: 15px;
 }
 
-/* Styling for the option buttons */
+/* Buttons for options */
 button.option {
-  display: inline-block;
-  flex: 1; /* Allow buttons to grow and take equal space */
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 16px;
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  font-size: 15px;
+  font-weight: 400; /* Lightweight font */
   cursor: pointer;
   text-align: center;
-  word-wrap: break-word; /* Ensure long text wraps inside button */
-  white-space: normal; /* Allow text to wrap to the next line */
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+button.option:hover {
+  background-color: #e9ecef; /* Slightly darker on hover */
 }
 
 button.option.correct {
-  background-color: #4CAF50; /* Green for correct answer */
+  background-color: #28a745;
   color: white;
 }
 
 button.option.wrong {
-  background-color: #f44336; /* Red for wrong answer */
+  background-color: #dc3545;
   color: white;
 }
 
-/* Styling for the form */
+/* Form container */
 form {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Input fields */
 form input {
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
+  font-weight: 300; /* Light font */
+  transition: border-color 0.2s ease;
 }
 
+form input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Submit button */
 form button {
-  padding: 10px;
-  background-color: #4CAF50;
+  padding: 12px;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500; /* Slightly bold for emphasis */
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
 }
 
-/* Styling for the header */
+/* Header styling */
 h2 {
   text-align: center;
-  color: #333;
-  margin-top: 40px;
+  color: #444;
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 400; /* Lighter font */
 }
 
-/* Styling for the list of questions */
+/* List of MCQs */
 ul {
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
   margin-top: 20px;
 }
 
+/* Individual MCQ items */
 li {
-  margin-top: 50px;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   padding: 15px;
-  margin-bottom: 10px;
+  margin: 15px auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
+li:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Placeholder for no MCQs */
 p {
   text-align: center;
-  color: #888;
-  font-size: 16px;
+  color: #666;
+  font-size: 14px;
   margin-top: 20px;
 }
 
-/* Optional styling for the message when no MCQs are available */
 p.no-mcq {
-  text-align: center;
-  color: #888;
   font-size: 16px;
+  font-weight: 400;
+  color: #888;
 }
 
-/* Styling for the container */
-div {
-  margin: 20px;
-  font-family: Arial, sans-serif;
-}
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  div.options {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-form input, form button {
-  margin-top: 10px;
-}
+  form {
+    padding: 15px;
+    max-width: 90%;
+  }
 
-button.option {
-  margin-bottom: 10px;
+  button.option {
+    font-size: 14px;
+  }
+
+  li {
+    margin: 10px;
+    padding: 12px;
+  }
 }
