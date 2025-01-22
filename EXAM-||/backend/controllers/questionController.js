@@ -1,27 +1,17 @@
 const Mcq = require("../models/questionModel");
 
 const getQuestion = async (req, res) => {
-    try {
-        const mcqs = await Mcq.find();
-        res.json(mcqs);
-    } catch (err) {
-        res.send("error");
-    }
+    const mcqs = await Mcq.find();
+    res.json(mcqs);
 };
 
+
 const addQuestion = async (req, res) => {
-    try {
-        const mcqData = req.body;
-        const updatedMcq = await Mcq.findOneAndUpdate(
-            { question: mcqData.question },
-            mcqData,
-            { new: true, upsert: true }
-        );
-        res.status(201).json(updatedMcq);
-    } catch (err) {
-        res.send("error");
-    }
+    const mcqData = new Mcq(req.body);
+    const savedMcq = await mcqData.save();
+    res.status(201).json(savedMcq);
 };
+
 
 const deleteQuestion = async (req, res) => {
     try {
